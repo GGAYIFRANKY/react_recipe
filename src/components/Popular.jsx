@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {Splide, SplideSlide} from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import {Link} from 'react-router-dom';
 
 const Popular = () => {
 
@@ -52,11 +53,13 @@ const Popular = () => {
 
 										<SplideSlide key={recipe.id}>
 											<div>
-												<Card>
-													<p>{recipe.title}</p>
-													<img src={recipe.image} alt={recipe.title} />
-													<Gradient />
-												</Card>
+												<Link to={"/recipe/" + recipe.id}>
+													<Card>
+														<p link>{recipe.title}</p>
+														<img src={recipe.image} alt={recipe.title} />
+														<Gradient />
+													</Card>
+												</Link>
 											</div>
 										</SplideSlide>
 										
